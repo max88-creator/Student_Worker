@@ -26,6 +26,6 @@ class StudentRepositoryImpl @Inject constructor(
     }
 
     override fun observeStudents(): Flow<List<Student>> {
-        return dao.observePeople()
+        return dao.observeStudents()
     }
 }

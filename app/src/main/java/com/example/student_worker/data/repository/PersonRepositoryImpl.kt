@@ -17,11 +17,11 @@ class PersonRepositoryImpl @Inject constructor(
         return dao.deletePerson(id)
     }
 
-    override suspend fun incrementAge(id: Int) {
+    override suspend fun incrementAge(id: Int?) {
         dao.incrementAge(id)
     }
 
-    override suspend fun decrementAge(id: Int) {
+    override suspend fun decrementAge(id: Int?) {
         dao.decrementAge(id)
     }
 

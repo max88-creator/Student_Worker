@@ -22,5 +22,5 @@ interface StudentDao {
     suspend fun decrementAge(id: Int)
 
     @Query("SELECT * FROM student")
-    fun observePeople(): Flow<List<Student>>
+    fun observeStudents(): Flow<List<Student>>
 }
