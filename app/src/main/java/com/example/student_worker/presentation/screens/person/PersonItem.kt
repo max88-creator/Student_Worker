@@ -32,7 +32,8 @@ fun PersonItem(
     name: String,
     age: String,
     onDecrement: () -> Unit,
-    onIncrement: () -> Unit
+    onIncrement: () -> Unit,
+    onStudentClick: () -> Unit
 ) {
     Box(
         modifier = Modifier
@@ -76,7 +77,7 @@ fun PersonItem(
                             onDecrement()
                         },
 
-                )
+                    )
                 Spacer(modifier = Modifier.width(11.dp))
                 Text(
                     text = "Incr",
@@ -91,7 +92,7 @@ fun PersonItem(
                 Spacer(modifier = Modifier.width(75.dp))
                 IconButton(
                     onClick = {
-
+                        onStudentClick()
                     }
                 ) {
                     Icon(

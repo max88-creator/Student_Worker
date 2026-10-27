@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -22,17 +23,22 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import com.example.student_worker.diialog.MainDialog
 import com.example.student_worker.domain.models.Person
 import com.example.student_worker.presentation.view_model.PersonViewModel
 
 @Composable
 fun PeopleList(
-    viewModel: PersonViewModel = hiltViewModel()
+    viewModel: PersonViewModel = hiltViewModel(),
+    onStudentListNavigate: () -> Unit
 ) {
     val people = viewModel.getAllPerson.collectAsState()
 
     var personName by remember { mutableStateOf("") }
     var personAge by remember { mutableStateOf("") }
+    var studentSpecialization by remember { mutableStateOf("") }
+    var showDialog by remember { mutableStateOf(false) }
+    var dialogMessage by remember { mutableStateOf("") }
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -99,12 +105,17 @@ fun PeopleList(
                     },
                     onIncrement = {
                         viewModel.incrementAge(person.id)
+                    },
+                    onStudentClick = {
+                        viewModel.onEvent()
+                   //     onStudentListNavigate()
                     }
                 )
                 Spacer(modifier = Modifier.height(9.dp))
             }
         }
         Spacer(modifier = Modifier.height(59.dp))
+        MainDialog(viewModel)
     }
 }
 
