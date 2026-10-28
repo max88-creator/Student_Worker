@@ -108,7 +108,7 @@ fun PeopleList(
                     },
                     onStudentClick = {
                         viewModel.onEvent()
-                   //     onStudentListNavigate()
+                        onStudentListNavigate()
                     }
                 )
                 Spacer(modifier = Modifier.height(9.dp))
