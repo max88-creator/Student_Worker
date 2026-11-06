@@ -23,16 +23,6 @@ interface PersonDao {
 
     @Query("SELECT * FROM person")
     fun observePeople(): Flow<List<Person>>
-
-
-//    @Query("UPDATE vegetable SET count = count + 1 WHERE id = :id")
-//    suspend fun incrementCount(id: Int)
-//
-//    @Query("UPDATE vegetable SET count = count - 1 WHERE id = :id")
-//    suspend fun decrementCount(id: Int)
-//
-//    @Query("SELECT * FROM vegetable")
-//    fun getAllVegetable(): Flow<List<Vegetable>>
-//@Query("DELETE FROM basket_item WHERE id = :id")
-//suspend fun delete(id: Int): Int
 }
+
+

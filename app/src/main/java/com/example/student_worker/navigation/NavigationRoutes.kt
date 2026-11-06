@@ -10,3 +10,6 @@ sealed interface NavigationRoutes {
     @Serializable
     data object StudentList : NavigationRoutes
 }
+
+
+

@@ -11,3 +11,5 @@ data class Student(
     val age: Int,
     val specialization: String
 )
+
+

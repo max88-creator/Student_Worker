@@ -24,3 +24,5 @@ interface StudentDao {
     @Query("SELECT * FROM student")
     fun observeStudents(): Flow<List<Student>>
 }
+
+

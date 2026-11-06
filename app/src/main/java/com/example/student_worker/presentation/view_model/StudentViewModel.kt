@@ -46,13 +46,13 @@ class StudentViewModel @Inject constructor(
         }
     }
 
-    fun incrementAge(id: Int) {
+    fun incrtAge(id: Int) {
         viewModelScope.launch {
             repository.incrementAge(id)
         }
     }
 
-    fun decrementAge(id: Int) {
+    fun decrAge(id: Int) {
        viewModelScope.launch {
            repository.decrementAge(id)
        }

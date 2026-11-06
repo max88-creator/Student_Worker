@@ -1,7 +1,5 @@
 package com.example.student_worker.presentation.view_model
 
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.mutableDoubleStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -11,7 +9,6 @@ import com.example.student_worker.domain.models.Person
 import com.example.student_worker.domain.models.Student
 import com.example.student_worker.domain.repository.PersonRepository
 import com.example.student_worker.domain.repository.StudentRepository
-import com.example.student_worker.presentation.screens.person.PersonListEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -26,9 +23,12 @@ class PersonViewModel @Inject constructor(
     private val repository: PersonRepository,
     private val studentRepository: StudentRepository
 ) : ViewModel(), DialogController {
+
+    val studentItem: Student? = null
     private val _uiPersonState = MutableStateFlow(
         Person()
     )
+
 
     val uiPersonState = _uiPersonState.asStateFlow()
 
@@ -57,7 +57,7 @@ class PersonViewModel @Inject constructor(
             viewModelScope.launch {
                 studentRepository.insertStudent(
                     Student(
-                        id = uiPersonState.value.id,
+                        id = studentItem?.id,
                         name = uiPersonState.value.name,
                         age = uiPersonState.value.age,
                         specialization = editableText.value
@@ -108,3 +108,5 @@ class PersonViewModel @Inject constructor(
         }
     }
 }
+
+

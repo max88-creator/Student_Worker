@@ -10,3 +10,4 @@ sealed class BottomMenuItem(
 data object Person: BottomMenuItem(title = "Person", iconId = R.drawable.sharp_person_24)
 data object Student: BottomMenuItem(title = "Student", iconId = R.drawable.ic_student)
 }
+

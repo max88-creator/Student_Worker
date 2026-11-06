@@ -21,3 +21,5 @@ abstract class RepositoryModule {
     @Singleton
     abstract fun bindStudentRepository(studentRepositoryImpl: StudentRepositoryImpl): StudentRepository
 }
+
+

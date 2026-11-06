@@ -5,3 +5,5 @@ sealed class DialogEvent {
     object OnCancel: DialogEvent()
     object OnConfirm: DialogEvent()
 }
+
+

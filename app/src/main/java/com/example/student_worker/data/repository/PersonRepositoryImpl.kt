@@ -29,3 +29,4 @@ class PersonRepositoryImpl @Inject constructor(
         return dao.observePeople()
     }
 }
+

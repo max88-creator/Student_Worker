@@ -15,3 +15,5 @@ abstract class MainDB: RoomDatabase() {
     abstract fun providePersonDao(): PersonDao
     abstract fun provideStudentDao(): StudentDao
 }
+
+

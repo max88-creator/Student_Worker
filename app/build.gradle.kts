@@ -33,12 +33,12 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    packaging {
-        resources {
-            excludes +=
-                "META-INF/gradle/incremental.annotation.processors"
-        }
-    }
+//    packaging {
+//        resources {
+//            excludes +=
+//                "META-INF/gradle/incremental.annotation.processors"
+//        }
+//    }
     buildFeatures {
         compose = true
     }
